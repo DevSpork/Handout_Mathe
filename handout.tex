@@ -3,6 +3,15 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
 \title{Einführung in die Mathematik für Informatiker, Cheatsheet}
 \author{Tobias Kadenbach}
 \date{\today}
@@ -10,13 +19,44 @@
 \begin{document}
 \maketitle
 
+\tableofcontents 
+
+\section{Gruppen}
+\subsection{Definition}
+(G, \cdot) ist eine Gruppe falls:
+\begin{itemize}
+	\item abgeschlossen bzgl. \cdot
+	\item assoziativ
+	\item neutrales Element mit $ \exists e \in G $ $\forall g \in G e \cdot g = g \cdot e = g $
+	\item Inverse: $ \forall g \in G $  $\exists g^{-1}  \in G $ $g \cdot g^{-1} = g^{-1} \cdot g = e $
+\end{itemize}
+\subsection{Darstellung und abelsche Gruppen}
+\noindent
+Eine möglische Darstellung einer Gruppe ist eine sogenannte Gruppentafel dabei wir jedes Element der Gruppe in eine Zeile und eine Spalte geschrieben und anschließen werden so die Elemente der Gruppe mit der Gruppenoperation verbunden. Das ausfüllen erfolgt dabei nach dem Sudokuprinzip (in jeder Zeile und Spalte darf jedes Element nur exakt einmal vorkommen).  
+Eine Gruppe wird auch abelsche genannt falls diese zur Hauptdiagonale symmetrisch ist. \\
+
+\subsection{Gruppenisomorphie}
+\noindent
+Eine Gruppe g ist Isomorph zu einer anderen Gruppe h wenn:
+\begin{itemize}
+	\item h ist selber eine Gruppe
+	\item es exisitiert ein Isomorphismus der jedem Element der Gruppe g ein Element der Gruppe h eineindeutig zuordnet es muss gelten wenn a \mapsto x , b \mapsto y und c \mapsto z und gilt a \cdot b = c, dann muss auch x \cdot y = z gelten.
+\end{itemize}
+
+
+
+
+
+
 \section{Satz von Euler Fermat}
 Seien $ a,n \in  \mathbb{N} $ und ggt(a,n) = 1 dann gilt: \\
 \begin{center}
 $ a^{\phi (n)} \equiv 1 (mod n) $ \\
 \end{center}
 Rechenbeispiel: \\
-Berechnen Sie die letzten zwei Ziffern der Zahl $ 211^{1043} $
+Berechnen Sie die letzten zwei Ziffern der Zahl $ 211^{1043} $:
+Also 211 $ 211^{1043} $ mod 100 da 2 Stellen.
+
 
 
 \end{document}
