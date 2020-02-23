@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage[german]{babel}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -11,6 +12,8 @@
     linkcolor=black,
     urlcolor=black
 }
+
+\newtheorem{theorem}{Satz}[section]
 
 \title{Einführung in die Mathematik für Informatiker, Cheatsheet}
 \author{Tobias Kadenbach}
@@ -23,12 +26,12 @@
 
 \section{Gruppen}
 \subsection{Definition}
-(G, \cdot) ist eine Gruppe falls:
+(G, \circ) ist eine Gruppe falls:
 \begin{itemize}
-	\item abgeschlossen bzgl. \cdot
+	\item abgeschlossen bzgl. \circ
 	\item assoziativ
-	\item neutrales Element mit $ \exists e \in G $ $\forall g \in G e \cdot g = g \cdot e = g $
-	\item Inverse: $ \forall g \in G $  $\exists g^{-1}  \in G $ $g \cdot g^{-1} = g^{-1} \cdot g = e $
+	\item neutrales Element mit $ \exists e \in G $ $\forall g \in G e \circ g = g \circ e = g $
+	\item Inverse: $ \forall g \in G $  $\exists g^{-1}  \in G $ $g \circ g^{-1} = g^{-1} \circ g = e $
 \end{itemize}
 \subsection{Darstellung und abelsche Gruppen}
 \noindent
@@ -40,8 +43,8 @@ Eine Gruppe wird auch abelsche genannt falls diese zur Hauptdiagonale symmetrisc
 Eine Gruppe g ist Isomorph zu einer anderen Gruppe h wenn:
 \begin{itemize}
 	\item h ist selber eine Gruppe
-	\item es exisitiert ein Isomorphismus der jedem Element der Gruppe g ein Element der Gruppe h eineindeutig zuordnet es muss gelten wenn a \mapsto x , b \mapsto y und c \mapsto z und gilt a \cdot b = c, dann muss auch x \cdot y = z gelten.
-	\item die Homomorphie Eigenschaft ist erfüllt ( $ h(a \cdot b) = h(a) \cdot h(b) $ )
+	\item es exisitiert ein Isomorphismus der jedem Element der Gruppe g ein Element der Gruppe h eineindeutig zuordnet es muss gelten wenn a \mapsto x , b \mapsto y und c \mapsto z und gilt a \circ b = c, dann muss auch x \circ y = z gelten.
+	\item die Homomorphie Eigenschaft ist erfüllt ( $ h(a \circ b) = h(a) \circ h(b) $ )
 \end{itemize}
 \subsection{Erzeugendensystem}
 Ein Element einer Gruppe ist Erzeugensystem wenn mit diesem Element und der Gruppneoperation jedes Element der Gruppe erzeugt werden kann.
@@ -74,6 +77,30 @@ n & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
 \hline
 $ 2^n $& 2 & 4 & 8 & $ 16 \equiv 3 $ & 6 & 12 & $ 24 \equiv 11 $& $ 22 \equiv 9$ & $18 \equiv 5$ & 10 & $20 \equiv 7$ & $14 \equiv 1$ \\
 \end{tabular}
+
+\subsection{Untergruppen}
+Sei (G, \circ) eine Gruppe
+U \subset G ist eine Untergruppe von G falls:
+
+\begin{itemize}
+	\item U ist abgeschlossen bzgl.  $ \circ $
+	\item $ e_G \in U $ (neutrales Element der Gruppe enthalten)
+	\item $ \forall u \in U: u^{-1} \in U $ (für jedes Element auch inverses enthalten)
+\end{itemize}
+
+\begin{theorem}[Satz von Lagrange] Die Untergruppenordnung teilt die Gruppenordnung\end{theorem}
+
+Beispiel:
+
+$\mathbb{Z}_{14}^* $ kann Untergruppen der Ordnung 1,2,3,6 haben da $ |\mathbb{Z}_{14}^*| = 6 $
+Dabei ist:
+\begin{itemize}
+	\item \{1\} Untergruppe der Ordnung  1
+	\item \{1,13\} Untergruppe der Ordnung 2
+	\item \{1,9,11\} Untergruppe der Ordnung 3
+\end{itemize}
+
+
 
 
 \section{Satz von Euler Fermat}
