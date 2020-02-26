@@ -14,6 +14,8 @@
 }
 
 \newtheorem{theorem}{Satz}[section]
+\newcommand{\compl}[1]{\bar{#1}}
+\newcommand{\elemof}[2]{$ #1 \in #2 $}
 
 \title{Einführung in die Mathematik für Informatiker, Cheatsheet}
 \author{Tobias Kadenbach}
@@ -26,9 +28,9 @@
 
 \section{Gruppen}
 \subsection{Definition}
-(G, \circ) ist eine Gruppe falls:
+$ (G, \circ) $ ist eine Gruppe falls:
 \begin{itemize}
-	\item abgeschlossen bzgl. \circ
+	\item abgeschlossen bzgl. $ \circ $
 	\item assoziativ
 	\item neutrales Element mit $ \exists e \in G $ $\forall g \in G e \circ g = g \circ e = g $
 	\item Inverse: $ \forall g \in G $  $\exists g^{-1}  \in G $ $g \circ g^{-1} = g^{-1} \circ g = e $
@@ -116,7 +118,37 @@ $5 \cdot U_2 = {5,9} = U_2 \cdot 9$\\
 $<g> = \{g, g \circ g, g\circ g \circ g\}$\\
 $|<1>| = | \{1\} |= 1$  \Rightarrow 1 hat die Ordnung 1
 
+\section{Graphen}
 
+\subsection{Komplemänterer Graph}
+Formel um die Knotenanzahl von $ \compl{G} $ zu berechnen: $ \compl{G} = (V, \binom{V}{2} \ E )$ also $\binom{n}{2} - |E|$
+
+%more todo
+
+\subsection{Bipartite Grpahen}
+Ein Grpah heißt bipartit falls man ihn mit genau zwei Farben so färben kann, dass nie zweimal die selbe Farbe nebeneinander auftritt.
+Ein Graph kann nicht ipartit sein wenn es ungerade Kreise in dem Graphen gibt.
+
+\subsection{Bäume}
+Ein Baum ist ein Grpah der T=(V,E) der keine Kreise hat und zusammenhängend ist. 
+
+\subsection{Subgraph}
+Ein Graph H=(W,F) heißt Subgraph von G=(V,E), wenn $ W \subseteq V und F \subseteq E $.
+
+\subsubsection{Induzierter Subgraph}
+Ein induzierter Teilgraph entsteht, wenn beim Obergraphen ein oder mehrere Knoten samt dessen inzidenten \footnote{angrenzdende} Kanten entfernt werden. 
+
+\subsection{Brücken}
+Subgraph (\{u,v\}, \{\{u,v\}\}) von G, so dass für die Zusammenhangskomponente H von u und v gilt: (H, E(H)\{\{u,v\}\}) = s nicht zusammenhängend.
+
+\subsection{Gelenkpunkte}
+Wenn man diesen Knoten entfernt so ist der Grpah danach nicht mehr zusammenhängend.
+
+\subsection{Blockgraph}
+$ G_B =( V_B, E_B) $ \\
+Knotenmenge $V_B = A \cup B$: \\
+A: Menge der Gelenkpunkte \\
+B: Menge der Blöcke
 
 \section{Satz von Euler Fermat}
 Seien $ a,n \in  \mathbb{N} $ und ggt(a,n) = 1 dann gilt: \\
