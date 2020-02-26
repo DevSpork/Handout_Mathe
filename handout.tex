@@ -14,8 +14,11 @@
 }
 
 \newtheorem{theorem}{Satz}[section]
+\newtheorem{proposition}{Proposition}[section]
+
 \newcommand{\compl}[1]{\bar{#1}}
 \newcommand{\elemof}[2]{$ #1 \in #2 $}
+\newcommand{\forallin}[2]{$ \forall #1 \in #2 $}
 
 \title{Einführung in die Mathematik für Informatiker, Cheatsheet}
 \author{Tobias Kadenbach}
@@ -45,7 +48,7 @@ Eine Gruppe wird auch abelsche genannt falls diese zur Hauptdiagonale symmetrisc
 Eine Gruppe g ist Isomorph zu einer anderen Gruppe h wenn:
 \begin{itemize}
 	\item h ist selber eine Gruppe
-	\item es exisitiert ein Isomorphismus der jedem Element der Gruppe g ein Element der Gruppe h eineindeutig zuordnet es muss gelten wenn a \mapsto x , b \mapsto y und c \mapsto z und gilt a \circ b = c, dann muss auch x \circ y = z gelten.
+	\item es exisitiert ein Isomorphismus der jedem Element der Gruppe g ein Element der Gruppe h eineindeutig zuordnet es muss gelten wenn $a \mapsto x$ , $b \mapsto y$ und $c \mapsto z$ und gilt $a \circ b = c$, dann muss auch $x \circ y = z$ gelten.
 	\item die Homomorphie Eigenschaft ist erfüllt ( $ h(a \circ b) = h(a) \circ h(b) $ )
 \end{itemize}
 \subsection{Erzeugendensystem}
@@ -81,8 +84,8 @@ $ 2^n $& 2 & 4 & 8 & $ 16 \equiv 3 $ & 6 & 12 & $ 24 \equiv 11 $& $ 22 \equiv 9$
 \end{tabular}
 
 \subsection{Untergruppen}
-Sei (G, \circ) eine Gruppe
-U \subset G ist eine Untergruppe von G falls:
+Sei $(G, \circ)$ eine Gruppe
+$U \subset G$ ist eine Untergruppe von G falls:
 
 \begin{itemize}
 	\item U ist abgeschlossen bzgl.  $ \circ $
@@ -158,8 +161,18 @@ $ G=(V,E) $ ist k-fach zusammenhängend, falls:
 	\end{itemize}
 	ist $G-\{x_1,...,x_{k-1}\}$ zusammenhängend.
 	$\Leftrightarrow $ (Satz 61) für alle $a,b \in V$ gibt es k unabhängige Pfade zwischen a und b.
-	
-\end{itemize}
+
+\begin{theorem}[Satz von 61]
+für k=2: $G=(V,E) 2-fach$ zsh. $ \Leftrightarrow $ \forallin{a, b}{V}. \\
+Es gibt 2 unabhängige Pfade von a nach b
+ \end{theorem}
+ \begin{proposition}
+	 G 2-fach zusammenhängend $\Leftrightarrow$ G lässt sich aus einem Kreis durch sukzessives anhängen von Pfaden (Ohren) konstruieren.
+ \end{proposition}
+
+ \subsection{Eulerzüge}
+ $G=(V,E)$ ist genau dann eulersch, wenn ein Weg bzw. Kreis $P$ existiert, für den gilt $G( |E| )=P( |E| )$
+ Das bedeutet eulersche Graphen sind Graphen bei denen alle Kanten genau einmal durchlaufen werden müssen.
 
 \section{Satz von Euler Fermat}
 Seien $ a,n \in  \mathbb{N} $ und ggt(a,n) = 1 dann gilt: \\
